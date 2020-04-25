@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="PrismHelloWorld.Views.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrismHelloWorld.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="using:Prism.Regions"
+    xmlns:behaviors="using:Microsoft.Xaml.Interactivity"
+    xmlns:actions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:prismInteractivity="using:Prism.Interactivity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="The hello world app"
+                   Style="{StaticResource HeaderTextBlockStyle}" />
+        <ContentControl Grid.Row="1"
+                        regions:RegionManager.RegionName="ContentRegion" />
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="NavigateRequest"
+                    Click="NavigateRequestButton_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
